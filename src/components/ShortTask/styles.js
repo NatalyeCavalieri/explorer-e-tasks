@@ -6,15 +6,15 @@ export const Container = styled.button`
   height: 44px;
   border: 0;
   padding: 0 16px;
-  border-radius: 7px;
-  font-size: 14px;
+  border-radius: 0.43rem;
+  font-size: 0.87rem;
   
   display: flex;
   align-items: center;
   gap: 7px;
 
   > svg {
-    font-size: 18px;
+    font-size: 1.12rem;
     color: ${({ theme }) => theme.COLORS.RED_200};
   }
 `;

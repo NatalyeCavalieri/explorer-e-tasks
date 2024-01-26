@@ -1,19 +1,32 @@
-import { CheckCircle, House, Folder, PlusSquare, Note, SignOut } from "@phosphor-icons/react";
+import { CheckCircle, House, Folder, PlusSquare, Note, SignOut, X} from "@phosphor-icons/react";
 
-import { Container, Footer, Nav, Title, Header, Button } from "./styles";
+import { Container, Footer, Nav, Title, Header, Button, Close } from "./styles";
 
-export function SideMenu() {
+export function SideMenu({menuIsOpen, onCloseMenu}) {
   return (
-    <Container>
+    <Container data-menu-is-open={menuIsOpen}>
       <Header>
-        <Title><CheckCircle /> e-Tasks</Title>
+        <Title>
+          <CheckCircle /> e-Tasks
+        </Title>
+        <Close onClick={onCloseMenu}>
+          <X />
+        </Close>
       </Header>
 
       <Nav>
-        <a href="#" data-menu-active="true"><House /> Home</a>
-        <a href="#"><PlusSquare /> Nova tarefa</a>
-        <a href="#"><Folder /> Projetos</a>
-        <a href="#"><Note /> Relatórios</a>
+        <a href="#" data-menu-active="true">
+          <House /> Home
+        </a>
+        <a href="#">
+          <PlusSquare /> Nova tarefa
+        </a>
+        <a href="#">
+          <Folder /> Projetos
+        </a>
+        <a href="#">
+          <Note /> Relatórios
+        </a>
       </Nav>
 
       <Footer>
@@ -28,5 +41,5 @@ export function SideMenu() {
         </Button>
       </Footer>
     </Container>
-  );
+  )
 }

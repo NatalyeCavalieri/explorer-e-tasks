@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { LAYOUT_BREAKPOINTS } from "../../styles/layoutBreakPoints"
+
 
 export const Container = styled.header`
   display: flex;
@@ -12,6 +14,21 @@ export const Container = styled.header`
   border-bottom-color: ${({ theme }) => theme.COLORS.GRAY_500};
 
   > h1 {
-    font-size: 32px;
+    font-size: 2rem;
   }
 `;
+
+export const Menu = styled.button`
+  display: none;
+
+@media (max-width: ${LAYOUT_BREAKPOINTS.MD}) {
+  display: flex;
+  background-color: transparent;
+  border: none;
+
+  > svg{
+    font-size: 2.5rem;
+    color: ${({theme})=> theme.COLORS.BLUE_200}
+  }
+}
+`
